@@ -26,7 +26,7 @@ public class RedisConfiguration {
 
         template.setConnectionFactory(redisConnectionFactory);
 
-        // 实现key具体的序列化方式
+        // 配置JSON序列化器
         Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
         ObjectMapper om = new ObjectMapper();
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
